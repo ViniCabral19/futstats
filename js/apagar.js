@@ -1,10 +1,6 @@
-function apagar(id){
-    // Pegar os jogadores do localStorage
-
-    // Filtrar os jogadores para remover o jogador com o id passado como parâmetro
-
-    // Salvar a lista de jogadores no localStorage
-
-    // Remover o item da página ou recarregar a página
-
+function apagar(id) {
+    let jogadores = JSON.parse(localStorage.getItem("jogadores")) || [];
+    jogadores = jogadores.filter(jogador => jogador.id !== parseInt(id));
+    localStorage.setItem("jogadores", JSON.stringify(jogadores));
+    window.location.reload();
 }
